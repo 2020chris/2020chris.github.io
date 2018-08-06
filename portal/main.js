@@ -17,7 +17,7 @@ var mainApp = {};
 function logOut(){
     firebase.auth().signOut();
 }
-function download()
+/*function download()
 {
     // Create a reference to the file we want to download
 var starsRef = storageRef.child('images/HR.jpg');
@@ -47,8 +47,8 @@ starsRef.getDownloadURL().then(function(url) {
       break;
   }
 });
-}
+}*/
 
-mainApp.download= download;
+//mainApp.download= download;
 mainApp.logout = logOut;
 })()
