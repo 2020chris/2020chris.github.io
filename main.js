@@ -19,34 +19,35 @@ function logOut(){
 }
 function download()
 {
-    // Create a reference to the file we want to download
-var starsRef = storageRef.child('images/HR.jpg');
+    // Create a reference with an initial file path and name
+var storage = firebase.storage();
+var pathReference = storage.ref('images/stars.jpg');
 
-// Get the download URL
-starsRef.getDownloadURL().then(function(url) {
-  // Insert url into an <img> tag to "download"
+// Create a reference from a Google Cloud Storage URI
+var gsReference = storage.refFromURL('gs://stroke-analysis.appspot.com/facescan/HR.jpg ')
+
+// Create a reference from an HTTPS URL
+// Note that in the URL, characters are URL escaped!
+var httpsReference = storage.refFromURL('https://firebasesto...-b8a9-3208608c5bd9');
+storageRef.child('images/stars.jpg').getDownloadURL().then(function(url) {
+  // `url` is the download URL for 'images/stars.jpg'
+
+  // This can be downloaded directly:
+  var xhr = new XMLHttpRequest();
+  xhr.responseType = 'blob';
+  xhr.onload = function(event) {
+    var blob = xhr.response;
+  };
+  xhr.open('GET', url);
+  xhr.send();
+
+  // Or inserted into an <img> element:
+  var img = document.getElementById('myimg');
+  img.src = url;
 }).catch(function(error) {
-
-  // A full list of error codes is available at
-  // https://firebase.google.com/docs/storage/web/handle-errors
-  switch (error.code) {
-    case 'storage/object_not_found':
-      // File doesn't exist
-      break;
-
-    case 'storage/unauthorized':
-      // User doesn't have permission to access the object
-      break;
-
-    case 'storage/canceled':
-      // User canceled the upload
-      break;
-
-    case 'storage/unknown':
-      // Unknown error occurred, inspect the server response
-      break;
-  }
+  // Handle any errors
 });
+
 }
 
 mainApp.download= download;
