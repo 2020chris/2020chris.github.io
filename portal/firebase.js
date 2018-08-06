@@ -3,10 +3,10 @@ var app_firebase={};
 
   // Initialize Firebase
  var config = {
-    apiKey: "<API_KEY>",
-    authDomain: "<PROJECT_ID>.firebaseapp.com",
-    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-    projectId: "<PROJECT_ID>",
+    apiKey: "Stoke_Anal",
+    authDomain: "stroke-analysis.firebaseapp.com",
+    databaseURL: "https://https://stroke-analysis.firebaseio.com",
+    projectId: "<Stroke1234>",
     storageBucket: "<BUCKET>.appspot.com",
     messagingSenderId: "<SENDER_ID>",
   };
