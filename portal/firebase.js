@@ -3,12 +3,12 @@ var app_firebase={};
 
   // Initialize Firebase
  var config = {
-    apiKey: "Stoke_Anal",
-    authDomain: "stroke-analysis.firebaseapp.com",
-    databaseURL: "https://https://stroke-analysis.firebaseio.com",
-    projectId: "<Stroke1234>",
-    storageBucket: "<BUCKET>.appspot.com",
-    messagingSenderId: "<SENDER_ID>",
+  apiKey: "AIzaSyBFgZVnGiNB2fkFFK7AVmIo5IJ49jqqrqM",
+  authDomain: "stroke-analysis.firebaseapp.com",
+  databaseURL: "https://stroke-analysis.firebaseio.com",
+  projectId: "stroke-analysis",
+  storageBucket: "stroke-analysis.appspot.com",
+  messagingSenderId: "302979947505"
   };
   firebase.initializeApp(config);
 
