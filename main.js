@@ -19,12 +19,13 @@ function logOut(){
 }
 function download()
 { 
+  storageRef.child("facescan/HR.jpg").getDownloadUrl().getResult(); 
     // Create a reference with an initial file path and name
-var storage = firebase.storage();
-var pathReference = storage.ref('images/HR.jpg');
+//var storage = firebase.storage();
+//var pathReference = storage.ref('images/HR.jpg');
 
 // Create a reference from a Google Cloud Storage URI
-var gsReference = storage.refFromURL('gs://stroke-analysis.appspot.com/facescan/HR.jpg ')
+//var gsReference = storage.refFromURL('gs://stroke-analysis.appspot.com/facescan/HR.jpg ')
 
 // Create a reference from an HTTPS URL
 // Note that in the URL, characters are URL escaped!
